@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <aside class="profile">
-      <div class="shape">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="left-triangle" points="0 0, 100 0, 0 75" />
-        </svg>
-      </div>
+      <svg class="corner" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="left-triangle" points="0 0, 100 0, 0 75" />
+      </svg>
       <div class="avatar-wrapper">
         <div class="avatar"></div>
       </div>
-      <div class="name"></div>
+      <div class="name-wrapper">
+        <span class="name first-name">Robert</span>
+        <span class="name last-name">Neagu</span>
+      </div>
     </aside>
     <section class="content"></section>
   </div>
@@ -33,15 +34,13 @@
     /**
      * SVG Shape behind avatar
      */
-    .shape {
+    .corner {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 64px;
-      svg {
-        .left-triangle { fill: darken(teal, 18%); }
-      }
+      height: 350px;
+      .left-triangle { fill: darken(teal, 18%); }
     }
 
     /**
@@ -58,6 +57,23 @@
         width: 150px;
         background: url(../assets/avatar.jpg) center top / 200%;
         border-radius: inherit;
+      }
+    }
+
+    /**
+     * Name
+     */
+    .name-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      .name {
+        margin: 0 4px;
+        font-size: 2.5em;
+
+        &.last-name {
+          font-weight: 700;
+        }
       }
     }
   }
