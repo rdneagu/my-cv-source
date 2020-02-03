@@ -68,7 +68,7 @@
       display: flex;
       flex-direction: row;
       .name {
-        margin: 0 4px;
+        margin: 0 6px;
         font-size: 2.5em;
 
         &.last-name {
