@@ -4,7 +4,6 @@
       <div class="shape">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <polygon class="left-triangle" points="0 0, 100 0, 0 75" />
-          <!-- <polygon class="right-triangle" points="100 5, 50 42.5, 100 75" /> -->
         </svg>
       </div>
       <div class="avatar-wrapper">
@@ -42,7 +41,6 @@
       height: 64px;
       svg {
         .left-triangle { fill: darken(teal, 18%); }
-        .right-triangle { fill: darken(teal, 14%); }
       }
     }
 
