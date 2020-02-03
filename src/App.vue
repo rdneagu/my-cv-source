@@ -7,6 +7,7 @@
 <style lang="scss">
 @import '@/scss/_normalize.scss';
 
+html, body, #app { min-height: 100vh; }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
