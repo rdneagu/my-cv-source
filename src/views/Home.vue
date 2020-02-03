@@ -11,6 +11,7 @@
         <span class="name first-name">Robert</span>
         <span class="name last-name">Neagu</span>
       </div>
+      <div class="role">Full-Stack Web Developer</div>
     </aside>
     <section class="content"></section>
   </div>
@@ -74,6 +75,32 @@
         &.last-name {
           font-weight: 700;
         }
+      }
+    }
+
+    /**
+     * Role
+     */
+    .role {
+      position: relative;
+      margin: 10px 0;
+      padding: 5px 30px;
+      font-size: 1em;
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: lighten(teal, 10%);
+      }
+      &:before {
+        top: 0;
+        border-bottom: 2px solid darken(teal, 15%);
+      }
+      &:after {
+        bottom: 0;
+        border-top: 2px solid darken(teal, 15%);
       }
     }
   }
