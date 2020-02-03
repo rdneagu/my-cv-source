@@ -15,7 +15,7 @@ html, body, #app {
 #app {
   display: flex;
   flex-direction: column;
-  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
