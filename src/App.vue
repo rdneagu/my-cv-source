@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Martel+Sans:400,600,700|Noto+Sans:400,700|Poppins:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap');
 @import '@/scss/_normalize.scss';
 
 html, body, #app {
@@ -14,11 +15,11 @@ html, body, #app {
 #app {
   display: flex;
   flex-direction: column;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Martel Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: lighten(teal, 10%);
   text-shadow: 1px 1px 1px black;
 
   > * { flex: 1; }
