@@ -95,10 +95,9 @@ export default {
 }
 .icon-vuejs:before {
   content: "\e908";
-  color: #4fc08d;
 }
 .icon-nodejs:before {
   content: "\e909";
-  color: #393;
+  color: #339933;
 }
 </style>
