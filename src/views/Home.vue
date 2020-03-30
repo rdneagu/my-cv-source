@@ -100,6 +100,7 @@ export default {
       margin: 10px 0;
       padding: 5px 30px;
       font-size: 1em;
+      background-color: darken(teal, 15%);
       &:before, &:after {
         content: "";
         position: absolute;

@@ -59,6 +59,9 @@ export default {
     justify-content: center;
     font-size: 14px;
     font-weight: 600;
+    .skill-name {
+      color: darken($teal, 15%);
+    }
   }
 }
 </style>
