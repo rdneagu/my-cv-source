@@ -5,7 +5,7 @@
 </template>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Martel+Sans:400,600,700|Noto+Sans:400,700|Poppins:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Titillium+Web:400,500,600,700&display=swap');
 @import '@/scss/_normalize.scss';
 
 html, body, #app {
