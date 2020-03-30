@@ -19,7 +19,7 @@ html, body, #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $teal;
+  color: $color-cyan;
   text-shadow: 1px 1px 1px black;
 
   > * { flex: 1; }
