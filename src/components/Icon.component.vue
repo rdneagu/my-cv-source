@@ -63,6 +63,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-git:before {
+  content: "\e90b";
+  color: #f05032;
+}
+.icon-github:before {
+  content: "\e90c";
+}
 .icon-mysql:before {
   content: "\e90a";
 }
