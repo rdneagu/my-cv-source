@@ -1,22 +1,33 @@
 <template>
   <div class="skill-wrapper">
-    <svg class="skill-hex-svg" width="100%" viewBox="-5 -5 310 290">
+    <svg class="skill-hex-svg" width="100%" viewBox="-10 -10 320 300">
       <polygon class="hex-progress" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
       <polygon class="hex-bg" points="300,150 225,280 75,280 0,150 75,20 225,20" :style="{ strokeDasharray: getStrokePositionCSS }"></polygon>
     </svg>
     <label class="skill-name-wrapper">
-      <span class="skill-name"><slot></slot></span>
+      <span :id="getCamelCaseName" class="skill-name">
+        <Icon :name="icon"></Icon>
+        <slot v-if="!icon"></slot>
+      </span>
       <span class="skill-percentage">{{ percentage }}%</span>
     </label>
   </div>
 </template>
 
 <script>
+import _ from 'lodash';
+
+import Icon from './Icon.component.vue';
+
 const MAX_STROKE_POS = 900;
 
 export default {
-  props: ['percentage'],
+  components: { Icon },
+  props: ['name', 'percentage', 'icon'],
   computed: {
+    getCamelCaseName() {
+      return `skill-${_.camelCase(this.name)}`;
+    },
     getPercentageRatio() {
       return this.percentage / 100;
     },
@@ -35,16 +46,17 @@ export default {
   .skill-hex-svg {
     width: 100px;
     .hex-bg, .hex-progress {
-      stroke-width: 10px;
+      stroke-width: 15px;
       fill: transparent;
+    }
+    .hex-progress {
+      stroke: $color-cyan;
+      fill: darken($color-cyan, 40%);
     }
     .hex-bg {
       stroke-dashoffset: 225;
-      stroke: darken(teal, 18%);
-      fill: darken(teal, 15%);
-    }
-    .hex-progress {
-      stroke: teal;
+      stroke: darken($color-cyan, 40%);
+      stroke-width: 10px;
     }
   }
   .skill-name-wrapper {
@@ -60,7 +72,8 @@ export default {
     font-size: 14px;
     font-weight: 600;
     .skill-name {
-      color: darken($teal, 15%);
+      font-size: 20px;
+      &#skill-database, &#skill-linux, &#skill-java, &#skill-aws { font-size: 26px; }
     }
   }
 }
