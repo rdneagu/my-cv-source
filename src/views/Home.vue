@@ -69,7 +69,7 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
-    background: linear-gradient(135deg, darken($color-cyan, 40%), darken($color-cyan, 34%));
+    background: linear-gradient(90deg, darken($color-cyan, 34%) -20%, darken($color-cyan, 40%));
 
     /**
      * SVG Shape behind avatar
@@ -80,7 +80,7 @@ export default {
       left: 0;
       right: 0;
       height: 350px;
-      .left-triangle { fill: darken($color-cyan, 42%); }
+      .left-triangle { fill: darken($color-cyan, 32%); }
     }
 
     /**
