@@ -32,21 +32,22 @@ export default {
     return {
       skills: {
         frontend: [
-          { name: 'HTML', percentage: 70, icon: 'html5' },
+          { name: 'HTML', percentage: 80, icon: 'html5' },
           { name: 'SCSS', percentage: 85, icon: 'css3' },
-          { name: 'Vue.js', percentage: 70, icon: 'vuejs' },
+          { name: 'Vue.js', percentage: 80, icon: 'vuejs' },
           { name: 'React.js', percentage: 40, icon: 'react' },
           { name: 'JS', percentage: 85, icon: 'javascript' },
         ],
         backend: [
-          { name: 'node.js', percentage: 60, icon: 'nodejs' },
+          { name: 'node.js', percentage: 75, icon: 'nodejs' },
           { name: 'Database', percentage: 55, icon: 'mysql' },
         ],
         relevant: [
           { name: 'Linux', percentage: 55, icon: 'linux' },
-          { name: 'Python', percentage: 40, icon: 'python' },
+          { name: 'Python', percentage: 50, icon: 'python' },
           { name: 'Java', percentage: 30, icon: 'java' },
           { name: 'AWS', percentage: 20, icon: 'amazonaws' },
+          { name: 'Git', percentage: 45, icon: 'github' },
         ],
       },
     };
@@ -165,7 +166,7 @@ export default {
         grid-row-gap: 10px;
         grid-column-gap: 10px;
         justify-content: space-evenly;
-        margin: 10px 0;
+        margin-top: 5px;
         .skill-wrapper:nth-child(5) {
           position: absolute;
           left: 50%;
