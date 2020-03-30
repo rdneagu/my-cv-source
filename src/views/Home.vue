@@ -12,10 +12,24 @@
         <span class="name last-name">Neagu</span>
       </div>
       <div class="role">Full-Stack Web Developer</div>
+      <div class="skills">
+        <SkillHex percentage="80">JS</SkillHex>
+        <SkillHex percentage="75">HTML</SkillHex>
+        <SkillHex percentage="85">Vue.js</SkillHex>
+        <SkillHex percentage="40">React.js</SkillHex>
+      </div>
     </aside>
     <section class="content"></section>
   </div>
 </template>
+
+<script>
+import SkillHex from '../components/SkillHex.component.vue';
+
+export default {
+  components: { SkillHex },
+};
+</script>
 
 <style lang="scss">
 @import '@/scss/_mixins.scss';
@@ -102,6 +116,20 @@
         bottom: 0;
         border-top: 2px solid darken(teal, 15%);
       }
+    }
+    /**
+     * Skills
+     */
+    .skills {
+      align-self: stretch;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+      grid-auto-flow: row;
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+      justify-content: space-evenly;
+
     }
   }
 }
