@@ -30,7 +30,7 @@ export default {
         contact: {
           lines: [
             { name: 'Phone', text: '+44 7518 885 1558', icon: 'phone' },
-            { name: 'Email', text: 'robertneagu194@gmail.com', icon: 'email' },
+            { name: 'Email', text: 'robertneagu194@gmail.com', icon: 'email', href: 'mailto:robertneagu194@gmail.com' },
           ],
         },
         social: {
