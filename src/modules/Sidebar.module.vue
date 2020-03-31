@@ -20,8 +20,8 @@
 <script>
 import Velocity from 'velocity-animate';
 
-import ContactPanel from '../components/panels/Contact.panel.vue';
-import SkillsPanel from '../components/panels/Skills.panel.vue';
+import ContactPanel from '@/components/panels/Contact.panel.vue';
+import SkillsPanel from '@/components/panels/Skills.panel.vue';
 
 export default {
   data() {
@@ -35,10 +35,10 @@ export default {
   methods: {
     panelEnter(el, done) {
       el.style.opacity = 0;
-      Velocity(el, { opacity: 1 }, { easing: 'swing', duration: 1000, complete: done });
+      Velocity(el, { opacity: 1 }, { easing: 'swing', duration: 400, complete: done });
     },
     panelLeave(el, done) {
-      Velocity(el, { opacity: 0 }, { easing: 'swing', duration: 1000, complete: done });
+      Velocity(el, { opacity: 0 }, { easing: 'swing', duration: 400, complete: done });
     },
     switchPanel() {
       this.panels.push(this.panels.shift());
@@ -64,7 +64,7 @@ export default {
   /**
     * SVG Shape behind avatar
     */
-  .corner {
+  > .corner {
     position: absolute;
     top: 0;
     left: 0;
@@ -76,7 +76,7 @@ export default {
   /**
     * Avatar
     */
-  .avatar-wrapper {
+  > .avatar-wrapper {
     position: relative;
     padding: 4px;
     border: 2px solid $color-cyan;
@@ -93,7 +93,7 @@ export default {
   /**
     * Name
     */
-  .name-wrapper {
+  > .name-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -110,7 +110,7 @@ export default {
   /**
     * Role
     */
-  .role {
+  > .role {
     position: relative;
     margin: 10px 0 20px 0;
     padding: 5px 40px;
