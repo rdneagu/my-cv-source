@@ -1,5 +1,6 @@
 <template>
   <div class="skill-wrapper">
+    <Icon v-if="isProficient" name="star" class="is-proficient" v-tooltip="{ text: 'Proficient' }"></Icon>
     <svg class="skill-hex-svg" width="100%" viewBox="-5 -5 59 62">
       <path class="hex-rail" d="M47,13.9c-0.1-0.2-0.3-0.5-0.5-0.8C44.7,10.6,26.9,0.7,24.7,1c0,0-0.1,0-0.2,0c-0.1,0-0.3,0-0.3,0
         C21.9,0.8,5.9,9.7,2.8,12.7c-0.5,0.5-0.8,1-0.9,1.4C0.8,17.3,0.7,33,1.7,37.3c0.2,0.8,0.7,1.7,1.5,2.3c2,1.7,7,4.7,11.6,7.2
@@ -20,7 +21,7 @@
     </svg>
     <label class="skill-name-wrapper">
       <span :id="getCamelCaseName" class="skill-name">
-        <Icon :name="icon"></Icon>
+        <Icon :name="icon" v-tooltip="{ text: name }"></Icon>
         <slot v-if="!icon"></slot>
       </span>
       <span class="skill-percentage">{{ percentage }}%</span>
@@ -49,6 +50,9 @@ export default {
       const strokePos = MAX_STROKE_POS * this.getPercentageRatio;
       return `${strokePos} ${MAX_STROKE_POS - strokePos}`;
     },
+    isProficient() {
+      return (this.getPercentageRatio >= 0.75);
+    },
   },
 };
 </script>
@@ -56,6 +60,13 @@ export default {
 <style lang="scss">
 .skill-wrapper {
   position: relative;
+  .is-proficient {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
   .skill-hex-svg {
     width: 80px;
     .hex-rail, .hex-empty, .hex-progress {
