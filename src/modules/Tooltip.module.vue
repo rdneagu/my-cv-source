@@ -38,8 +38,12 @@ export default {
           x: { css: 'left', px: preset.center },
           y: { css: 'bottom', px: preset.top },
         };
-        this.tooltipPosition = {};
         this.arrowPosition = 'bottom';
+        if (top - tooltip.offsetHeight - 10 <= 0) {
+          position.y = { css: 'top', px: preset.bottom };
+          this.arrowPosition = 'top';
+        }
+        this.tooltipPosition = {};
         this.tooltipPosition[position.x.css] = `${position.x.px}px`;
         this.tooltipPosition[position.y.css] = `${position.y.px}px`;
       });
@@ -60,6 +64,7 @@ export default {
   background-color: $color-cyan-bg;
   box-shadow: 0 0 20px rgba(#000, .5);
   font-size: 14px;
+  font-weight: 500;
   white-space: pre;
   z-index: 5000;
   transition: opacity .2s ease;

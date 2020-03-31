@@ -1,8 +1,8 @@
 import store from '../store/index';
 
-function show(el, binding) {
-  if (el.getAttribute('unbinding')) return;
-  store.commit('showTooltip', { element: el, type: binding.value.type, text: binding.value.text });
+function show(binding) {
+  if (this.getAttribute('unbinding')) return;
+  store.commit('showTooltip', { element: this, type: binding.value.type, text: binding.value.text });
 }
 
 function hide() {
@@ -11,8 +11,8 @@ function hide() {
 
 const tooltipDirective = {
   bind(el, binding) {
-    el.addEventListener('mouseenter', show.bind(null, el, binding));
-    el.addEventListener('mouseleave', hide.bind(null));
+    el.addEventListener('mouseenter', show.bind(el, binding));
+    el.addEventListener('mouseleave', hide);
     // danielandrewstewart@gmail.com
   },
   unbind(el) {
