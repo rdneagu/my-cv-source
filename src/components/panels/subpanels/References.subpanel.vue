@@ -43,8 +43,8 @@ export default {
             lines: [
               { name: 'Company', text: 'Traveltek Ltd.', icon: 'business' },
               { name: 'Position', text: 'Maintenance Team Leader', icon: 'clipboard' },
-              { name: 'Name', text: 'Daniel Stewart', icon: 'user' },
-              { name: 'Email', text: 'danielandrewstewart@gmail.com', icon: 'email' },
+              { name: 'Name', text: '<temporarily private>' || 'Daniel Stewart', icon: 'user' },
+              { name: 'Email', text: '<temporarily private>' || 'danielandrewstewart@gmail.com', icon: 'email' },
             ],
           },
           {
@@ -53,8 +53,8 @@ export default {
             lines: [
               { name: 'Company', text: 'McDonalds', icon: 'business' },
               { name: 'Position', text: 'Shift Supervisor', icon: 'clipboard' },
-              { name: 'Name', text: 'Gurps Singh Gill', icon: 'user' },
-              { name: 'Email', text: 'G.Singh.Gill@outlook.com', icon: 'email' },
+              { name: 'Name', text: '<temporarily private>' || 'Gurps Singh Gill', icon: 'user' },
+              { name: 'Email', text: '<temporarily private>' || 'G.Singh.Gill@outlook.com', icon: 'email' },
             ],
           },
         ],
@@ -85,6 +85,7 @@ export default {
       if (this.isReferenceSelected(reference)) {
         this.$set(this.references, 'selected', null);
       } else {
+        // Hack to force the fade-out of the reference subpanel
         this.$set(this.references, 'selected', null);
         await this.$nextTick();
         this.$set(this.references, 'selected', reference);
