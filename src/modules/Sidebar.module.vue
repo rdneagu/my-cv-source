@@ -17,7 +17,7 @@
     <Icon class="animation-control"
       :name="`${getInterval ? 'pause' : 'play'}`"
       :click="toggleInterval.bind()"
-      v-tooltip="{ text: 'Toggle the sidebar animation' }"></Icon>
+      v-tooltip="{ text: 'Toggle the panel animation' }"></Icon>
   </section>
 </template>
 

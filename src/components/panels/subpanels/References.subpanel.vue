@@ -44,7 +44,7 @@ export default {
               { name: 'Company', text: 'Traveltek Ltd.', icon: 'business' },
               { name: 'Position', text: 'Maintenance Team Leader', icon: 'clipboard' },
               { name: 'Name', text: '<temporarily private>' || 'Daniel Stewart', icon: 'user' },
-              { name: 'Email', text: '<temporarily private>' || 'danielandrewstewart@gmail.com', icon: 'email' },
+              { name: 'Email', text: '<temporarily private>' || 'danielandrewstewart@gmail.com', icon: 'email', href: 'mailto:<temporarily private>' },
             ],
           },
           {
@@ -54,7 +54,7 @@ export default {
               { name: 'Company', text: 'McDonalds', icon: 'business' },
               { name: 'Position', text: 'Shift Supervisor', icon: 'clipboard' },
               { name: 'Name', text: '<temporarily private>' || 'Gurps Singh Gill', icon: 'user' },
-              { name: 'Email', text: '<temporarily private>' || 'G.Singh.Gill@outlook.com', icon: 'email' },
+              { name: 'Email', text: '<temporarily private>' || 'G.Singh.Gill@outlook.com', icon: 'email', href: 'mailto:<temporarily private>' },
             ],
           },
         ],
