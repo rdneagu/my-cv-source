@@ -40,9 +40,9 @@ export default {
 @font-face {
   font-family: 'my-cv-icon';
   src:
-    url('../assets/fonts/icons/my-cv-icon.ttf?6f15b0') format('truetype'),
-    url('../assets/fonts/icons/my-cv-icon.woff?6f15b0') format('woff'),
-    url('../assets/fonts/icons/my-cv-icon.svg?6f15b0#my-cv-icon') format('svg');
+    url('../assets/fonts/icons/my-cv-icon.ttf?dkauy6') format('truetype'),
+    url('../assets/fonts/icons/my-cv-icon.woff?dkauy6') format('woff'),
+    url('../assets/fonts/icons/my-cv-icon.svg?dkauy6#my-cv-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -51,7 +51,6 @@ export default {
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'my-cv-icon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -63,6 +62,30 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-star:before {
+  content: "\e915";
+}
+.icon-alert:before {
+  content: "\e914";
+}
+.icon-email:before {
+  content: "\e90e";
+}
+.icon-phone:before {
+  content: "\e90f";
+}
+.icon-location:before {
+  content: "\e910";
+}
+.icon-calendar:before {
+  content: "\e911";
+}
+.icon-bitbucket:before {
+  content: "\e912";
+}
+.icon-linkedin:before {
+  content: "\e913";
+}
 .icon-git:before {
   content: "\e90b";
   color: #f05032;
