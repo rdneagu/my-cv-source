@@ -14,34 +14,55 @@
     <transition @enter="panelEnter" @leave="panelLeave" mode="out-in" appear>
       <component :is="panels[0]" key="panel"></component>
     </transition>
+    <Icon class="animation-control"
+      :name="`${getInterval ? 'pause' : 'play'}`"
+      :click="toggleInterval.bind()"
+      v-tooltip="{ text: 'Toggle the sidebar animation' }"></Icon>
   </section>
 </template>
 
 <script>
 import Velocity from 'velocity-animate';
 
-import ContactPanel from '../components/panels/Contact.panel.vue';
-import SkillsPanel from '../components/panels/Skills.panel.vue';
+import Icon from '@/components/Icon.component.vue';
+import ContactPanel from '@/components/panels/Contact.panel.vue';
+import SkillsPanel from '@/components/panels/Skills.panel.vue';
 
 export default {
+  components: { Icon },
   data() {
     return {
       panels: [ContactPanel, SkillsPanel],
+      interval: null,
     };
   },
   mounted() {
-    setInterval(this.switchPanel, 10000);
+    this.toggleInterval();
+  },
+  computed: {
+    getInterval() {
+      return !!this.interval;
+    },
   },
   methods: {
     panelEnter(el, done) {
       el.style.opacity = 0;
-      Velocity(el, { opacity: 1 }, { easing: 'swing', duration: 1000, complete: done });
+      Velocity(el, { opacity: 1 }, { easing: 'swing', duration: 400, complete: done });
     },
     panelLeave(el, done) {
-      Velocity(el, { opacity: 0 }, { easing: 'swing', duration: 1000, complete: done });
+      Velocity(el, { opacity: 0 }, { easing: 'swing', duration: 400, complete: done });
     },
     switchPanel() {
       this.panels.push(this.panels.shift());
+    },
+    toggleInterval() {
+      if (this.interval) {
+        clearInterval(this.interval);
+        this.interval = null;
+      } else {
+        this.switchPanel();
+        this.interval = setInterval(this.switchPanel, 10000);
+      }
     },
   },
 };
@@ -58,13 +79,20 @@ export default {
   background: linear-gradient(90deg, darken($color-cyan, 34%) -20%, darken($color-cyan, 40%));
   border-right: 1px solid darken($color-cyan, 32%);
 
+  .animation-control {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 32px;
+  }
+
   > [class$='panel'] {
     opacity: 0;
   }
   /**
     * SVG Shape behind avatar
     */
-  .corner {
+  > .corner {
     position: absolute;
     top: 0;
     left: 0;
@@ -76,7 +104,7 @@ export default {
   /**
     * Avatar
     */
-  .avatar-wrapper {
+  > .avatar-wrapper {
     position: relative;
     padding: 4px;
     border: 2px solid $color-cyan;
@@ -93,7 +121,7 @@ export default {
   /**
     * Name
     */
-  .name-wrapper {
+  > .name-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -110,7 +138,7 @@ export default {
   /**
     * Role
     */
-  .role {
+  > .role {
     position: relative;
     margin: 10px 0 20px 0;
     padding: 5px 40px;

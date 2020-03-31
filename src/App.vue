@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Sidebar from './modules/Sidebar.module.vue';
-import Tooltip from './modules/Tooltip.module.vue';
+import Sidebar from '@/modules/Sidebar.module.vue';
+import Tooltip from '@/modules/Tooltip.module.vue';
 
 export default {
   components: { Sidebar, Tooltip },

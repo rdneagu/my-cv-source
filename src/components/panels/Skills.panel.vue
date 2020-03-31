@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SkillHex from '../SkillHex.component.vue';
+import SkillHex from '@/components/SkillHex.component.vue';
 
 export default {
   components: { SkillHex },
@@ -42,9 +42,6 @@ export default {
 </script>
 
 <style lang="scss">
-/**
- * Skills
- */
 .skills-panel {
   align-self: stretch;
   .skills-container {
