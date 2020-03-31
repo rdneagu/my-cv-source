@@ -32,3 +32,17 @@
 
   background: linear-gradient(unquote($direction), $stops);
 }
+
+@mixin transition($properties, $duration: 0.4s, $easing: ease, $delay: 0) {
+  transition-property: unquote($properties);
+  transition-duration: $duration;
+  transition-timing-function: $easing;
+  transition-delay: $delay;
+}
+
+@mixin disableSelect() {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
