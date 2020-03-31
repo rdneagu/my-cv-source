@@ -37,12 +37,14 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@/scss/_mixins';
+
 @font-face {
   font-family: 'my-cv-icon';
   src:
-    url('../assets/fonts/icons/my-cv-icon.ttf?uw4k7') format('truetype'),
-    url('../assets/fonts/icons/my-cv-icon.woff?uw4k7') format('woff'),
-    url('../assets/fonts/icons/my-cv-icon.svg?uw4k7#my-cv-icon') format('svg');
+    url('../assets/fonts/icons/my-cv-icon.ttf?kfbnlq') format('truetype'),
+    url('../assets/fonts/icons/my-cv-icon.woff?kfbnlq') format('woff'),
+    url('../assets/fonts/icons/my-cv-icon.svg?kfbnlq#my-cv-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -60,8 +62,19 @@ export default {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @include transition(color, .2s, ease);
+  &.pointer:hover {
+    color: lighten($color-cyan, 20%);
+    cursor: pointer;
+  }
 }
 
+.icon-play:before {
+  content: "\e918";
+}
+.icon-pause:before {
+  content: "\e919";
+}
 .icon-user:before {
   content: "\e976";
 }
