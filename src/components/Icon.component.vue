@@ -40,9 +40,9 @@ export default {
 @font-face {
   font-family: 'my-cv-icon';
   src:
-    url('../assets/fonts/icons/my-cv-icon.ttf?dkauy6') format('truetype'),
-    url('../assets/fonts/icons/my-cv-icon.woff?dkauy6') format('woff'),
-    url('../assets/fonts/icons/my-cv-icon.svg?dkauy6#my-cv-icon') format('svg');
+    url('../assets/fonts/icons/my-cv-icon.ttf?uw4k7') format('truetype'),
+    url('../assets/fonts/icons/my-cv-icon.woff?uw4k7') format('woff'),
+    url('../assets/fonts/icons/my-cv-icon.svg?uw4k7#my-cv-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -62,6 +62,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-user:before {
+  content: "\e976";
+}
+.icon-business:before {
+  content: "\e90d";
+}
+.icon-clipboard:before {
+  content: "\e916";
+}
 .icon-star:before {
   content: "\e915";
 }
